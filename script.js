@@ -1,8 +1,6 @@
 const player = document.querySelector(".player");
-
 const video = player.querySelector(".viewer");
 const toggle = player.querySelector(".toggle");
-const progress = player.querySelector(".progress");
 const progressBar = player.querySelector(".progress__filled");
 const skipButtons = player.querySelectorAll("[data-skip]");
 const ranges = player.querySelectorAll(".controls input");
@@ -33,6 +31,7 @@ function handleRangeUpdate() {
 }
 
 toggle.addEventListener("click", togglePlay);
+
 video.addEventListener("click", togglePlay);
 
 video.addEventListener("play", updateButton);
@@ -45,6 +44,6 @@ skipButtons.forEach((button) => {
 });
 
 ranges.forEach((range) => {
+  range.addEventListener("input", handleRangeUpdate);
   range.addEventListener("change", handleRangeUpdate);
-  range.addEventListener("mousemove", handleRangeUpdate);
 });
