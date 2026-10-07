@@ -1,4 +1,5 @@
 const player = document.querySelector(".player");
+
 const video = player.querySelector(".viewer");
 const toggle = player.querySelector(".toggle");
 const progress = player.querySelector(".progress");
